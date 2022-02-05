@@ -45,30 +45,66 @@
 <br><br><hr>
  
 <h3> Cool things </h3>
-  <input type=button value="0. Pseudo Code" onclick="{
+    <input type=button value="0. Pseudo Code" onclick="{
          document.getElementById('div2').innerHTML = ` 
-          Information in and out of a program. <br> 
-           <pre>
-           x = document.all.getElementById('myText01').value   // example input </pre> <br> <pre>  document.getElementById('myDiv01').innerHTML = x // example output </pre>
+          Artificial and informal language to help programmers develop algorithms.  
     `}">                                                                        
-   <input type=button value="1. Input/Output" onclick="{
-         document.getElementById('div2').innerHTML = 'Input fhdsjibefuidsi'  
-    }">                                                                          
- 
-  <input type=button value="4. Decisions" onclick="{
-  document.getElementById('div2').innerHTML = `
-   Decisions use the if statement to make true 
-   false variable decisions <br> 
-   <pre>
-   if (hour < 18) {
-    greeting = \'Good Day\';
-     }
-     </pre>
-  `}">  
-  
-  <br> 
-                      
+    <input type=button value="1. Input/Output" onclick="{
+         document.getElementById('div2').innerHTML = ` 
+          Information in and out of a program. <br><pre>
+x = document.all.getElementById('myText01').value   // example input<br>document.getElementById('myDiv01').innerHTML = x // example output </pre>
+	`}">
+    <input type=button value="2. Variables" onclick="{
+         document.getElementById('div2').innerHTML = `
+		 Stored information. <br><pre>
+x = 8 
+myY = 'capy'
+    `}">
+    <input type=button value="3. Loops" onclick="{
+         document.getElementById('div2').innerHTML = `
+          Repeats code. <br><pre>
+for (x=0; x < 3; x++){   // Loop example 
+  }
+    `}">
+	<input type=button value="4. Decisions" onclick="{
+         document.getElementById('div2').innerHTML = `
+		  Makes decisions based on variables. <br><pre>
+if(x==3) {}
+if (x <= 3){}  else {}
+if ((x > 3) && (x < 9))  {}  else {}		  
+	`}">
+	<input type=button value="5. Functions" onclick="{
+         document.getElementById('div2').innerHTML = `
+		  Named group of code that can be called multiple times. <br><pre>
+function myFun() { }  // defines a group of code
+myFun()  // activates the function
+    `}">
+    <input type=button value="6. Arrays" onclick="{
+         document.getElementById('div2').innerHTML = `
+          Numbered list of variables.<br><pre>
+x[0] = 3;    
+x[1] = 6; 
+	`}">
+	<input type=button value="7. Objects" onclick="{
+         document.getElementById('div2').innerHTML = `
+		  Named list of variables.<br><pre>
+x = {age:20, name:'fred'}   // sets object
+x.age    
+x.name // uses object
+    `}">
+    <input type=button value="8. Events" onclick="{
+         document.getElementById('div2').innerHTML = `
+          Triggers code.<br><pre>
+	`}">
+    <input type=button value="9. Classes" onclick="{
+         document.getElementById('div2').innerHTML = `
+          Groups variables and functions for simplicity.<br><pre>
+methods    --> functions
+properties --> variables
+    `}">		  
+  <br>                    
   <div id="div2">...</div>
+
 
   
 
