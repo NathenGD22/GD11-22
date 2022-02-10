@@ -62,19 +62,17 @@ multiple items<br>
 
 <h2>Advanced</h2>
 
-Load an image and get it to move 10 pixels to the left using the button below<br>
+Load an image and get it to move 100 pixels to the left and right using the buttons below<br>
 
 <image id="Capy" src="capyeat.jpg" style="position:relative; left:0; top:0; width:250; height:250; "><br>
 
-  .myDiv01 {
-
   <input type=button value="Go left" onclick="{
-   document.getElementById('Capy').style.left = '10px'
+   document.getElementById('Capy').style.left = '100px'
    document.getElementById('myDiv01').innerHTML = 'It went left'
 }">
   
 <input type=button value="Go right" onclick="{
-   document.getElementById('Capy').style.right = '10px'
+   document.getElementById('Capy').style.right = '100px'
    document.getElementById('myDiv01').innerHTML = 'It went right'                                           
 }">
 
