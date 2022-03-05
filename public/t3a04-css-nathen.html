@@ -2,6 +2,28 @@
 <head>
   <style>
   body { background-color: #8d4bb4; }
+    
+    
+    
+.div1 {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  animation: 
+    myfirst 2s;
+    linear 1s;
+    alternate;
+    
+}
+
+@keyframes myfirst {
+  0%    {left:0px; top:0px;}
+  20%   {left:200px; top:0px;}
+  40%   {left:0px; top:200px}
+  60%   {transform: rotate( 45deg ) scale( 1 );}
+  80%   {transform: rotate( -90deg ) scale( 2 );}
+}    
+    
 </style>
   </head>	
 <body>
@@ -38,7 +60,6 @@ I do CSS inside the tag. It overpowers all other methods<br>
 }"><br>
 
 
-
 <textarea style="position:relative; left:0; top0; width:200; height:50; ">
-Advanced: see if you can remove this textarea
+Advanced: backflip
 </textarea><br>
