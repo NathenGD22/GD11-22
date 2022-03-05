@@ -10,9 +10,9 @@
   height: 100px;
   position: relative;
   animation: 
-    Slide 3s;
+    Slide 1.5s;
    animation-play-state: paused 3s;
-    BackF
+    BackF 1s;
     linear 2s;
     alternate;
     
@@ -21,17 +21,16 @@
 @keyframes Slide {
   0%    {left:0px; top:0px;}
   100%   {left:400px; top:0px;}
+  
+  
+@keyframes BackF {
+  1%   {transform: rotate( -360deg ) scale( 1 );}
+  100%  {left:0px; top:0px; transform: rotate( -360deg ) scale( 1 )}  
 
   
 }    
     
-}
 
-@keyframes BackF {
-  1%   {transform: rotate( -360deg ) scale( 1 );}
-  100%  {left:0px; top:0px; transform: rotate( -360deg ) scale( 1 )}
-  
-}    
     
 </style>
   </head>	
