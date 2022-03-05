@@ -36,5 +36,14 @@ Javascript innerHTML value by Fred</a>
 
 <div id="myDiv01">...</div>
   
+  <script>
+function myCharCount(obj){
+    document.getElementById("charNum").innerHTML = obj.value.length+' characters'; 
+}
+  </script>
+  
+<textarea name="message" onkeypress="myCharCount(this);"></textarea>
+<div id="charNum">0 characters</p>
+  
   
   
