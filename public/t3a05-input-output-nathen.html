@@ -43,10 +43,10 @@ Javascript innerHTML value by Fred</a>
 <script>  
   function countChar(val) {
   var len = val.value.length;
-  if (len >= 0) {
+  if (len >= 500) {
     val.value = val.value.substring(500, 0);
   } else {
-    $('#charNum').text(0 - len);
+    $('#charNum').text(500 - len);
   }
 };
   </script>
