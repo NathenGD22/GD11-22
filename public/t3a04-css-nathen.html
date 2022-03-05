@@ -5,29 +5,53 @@
     
     
     
-.div555 {
+..div555 {
   width: 100px;
   height: 100px;
   position: relative;
   animation: 
-    Slide 3s;
+    BackF1 3s;
+    linear 2s;
+    alternate;
     
 }
 
-@keyframes Slide {
+@keyframes BackF1 {
   0%    {left:0px; top:0px;}
-  20%   {left:400px; top:0px;}
-  40%   {left:400px; top:0px;}
-  60%   {left:400px; top:0px; transform: rotate( -360deg ) scale( 1 );}
-  80%   {left:400px; top:0px;}
-  100%  {left:0px; top:0px;}  
+  100%   {left:400px; top:0px;}
 
-  
- 
-  
 }    
-    
 
+.div556 {
+  width: 100px;
+  height: 100px;
+  animation: 
+    BackF2 3s;
+    linear 2s;
+    alternate;
+    
+}
+
+@keyframes BackF2 {
+  100%   {transform: rotate( -360deg )}
+
+}   
+ 
+.div557 {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  animation: 
+    BackF3 3s;
+    linear 2s;
+    alternate;
+    
+}
+@keyframes BackF3 {
+  0%    {left:400px; top:0px}
+  100%  {left:0px; top:0px}
+
+}    
     
 </style>
   </head>	
@@ -69,7 +93,32 @@ I do CSS inside the tag. It overpowers all other methods<br>
 Advanced: backflip :)
 </textarea><br>
 <input type=button value="Do a backflip" onclick="{
-   document.getElementById('Backflip').className = 'div555'
- }">                                                  
+Myfunction()
+ }">
 
+<script>
+function b1() {
+document.getElementById('Backflip').className = 'div555'
+}
+</script>
+
+<script>
+function b2() {
+document.getElementById('Backflip').className = 'div556'
+}
+</script>
+
+<script>
+function b3() {
+document.getElementById('Backflip').className = 'div557'
+}
+</script>
+
+<script>
+function Myfunction() {
+   setTimeout(b1, 0);
+   setTimeout(b2, 3000);
+   setTimeout(b3, 6000);
+}
+</script>
   
