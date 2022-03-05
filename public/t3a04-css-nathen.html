@@ -5,18 +5,18 @@
     
     
     
-.div1 {
+.div555 {
   width: 100px;
   height: 100px;
   position: relative;
   animation: 
-    myfirst 2s;
+    BackF 2s;
     linear 1s;
     alternate;
     
 }
 
-@keyframes myfirst {
+@keyframes BackF {
   0%    {left:0px; top:0px;}
   20%   {left:200px; top:0px;}
   40%   {left:0px; top:200px}
@@ -61,6 +61,10 @@ I do CSS inside the tag. It overpowers all other methods<br>
 }"><br>
 
 
-<textarea id="LetsMove" style="position:relative; left:0; top:0; width:200; height:50; ">
+<textarea id="Backflip" style="position:relative; left:0; top:0; width:200; height:50; ">
 Advanced: backflip :)
 </textarea><br>
+<input type=button value="Do a backflip" onclick="{
+   document.getElementById('Backflip').className = 'div555'
+
+  
