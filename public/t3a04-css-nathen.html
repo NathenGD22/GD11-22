@@ -190,44 +190,138 @@ body
 }
   </style> <br><br><br>
   
-  <div class="controls">
 
-    <label for="blur">Blur:</label>
-    <input id="blur" type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+<div></div>
+<ul>
+  <li>
+    <label for="filter-select">Choose a filter function:</label>
+    <select id="filter-select">
+      <option selected>blur</option>
+      <option>brightness</option>
+      <option>contrast</option>
+      <option>drop-shadow</option>
+      <option>grayscale</option>
+      <option>hue-rotate</option>
+      <option>invert</option>
+      <option>opacity</option>
+      <option>saturate</option>
+      <option>sepia</option>
+    </select>
+  </li>
+  <li>
+    <input type="range"><output></output>
+  </li>
+  <li>
+    <p>Current value: <code></code></p>
+  </li>
+</ul>
 
-  </div>
-<img src="lovecapy.png">
   <style>
-  :root {
-      --blur: 10px;
-    }
+    div {
+  width: 300px;
+  height: 300px;
+  background:  src(capylove.png) no-repeat center;
+}
 
-    img {
-      filter: blur(var(--blur));
-    }
+li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 
-    .controls {
-      margin-bottom: 50px;
-    }
+input {
+  width: 60%
+}
 
-    input {
-      width:100px;
-    }
-    
-    <script>
-   const inputs = document.querySelectorAll('.controls input');
+output {
+  width: 5%;
+  text-align: center;
+}
 
-    function handleUpdate() {
-      const suffix = this.dataset.sizing || '';
-      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
-    }
-
-    inputs.forEach(input => input.addEventListener('change', handleUpdate));
-    inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));  
-   
-    
+select {
+  width: 40%;
+  margin-left: 2px;
+}
   </style>
-  </script>
+  
+  const selectElem = document.querySelector('select');
+const divElem = document.querySelector('div');
+const slider = document.querySelector('input');
+const output = document.querySelector('output');
+const curValue = document.querySelector('p code');
+
+selectElem.addEventListener('change', () => {
+  setSlider(selectElem.value);
+  setDiv(selectElem.value);
+});
+
+slider.addEventListener('input', () => {
+  setDiv(selectElem.value);
+});
+
+function setSlider(filter) {
+  if(filter === 'blur') {
+    slider.value = 0;
+    slider.min = 0;
+    slider.max = 30;
+    slider.step = 1;
+    slider.setAttribute('data-unit', 'px');
+  } else if(filter === 'brightness' || filter === 'contrast' || filter === 'saturate') {
+    slider.value = 1;
+    slider.min = 0;
+    slider.max = 4;
+    slider.step = 0.05;
+    slider.setAttribute('data-unit', '');
+  } else if(filter === 'drop-shadow') {
+    slider.value = 0;
+    slider.min = -20;
+    slider.max = 40;
+    slider.step = 1;
+    slider.setAttribute('data-unit', 'px');
+  } else if(filter === 'opacity') {
+    slider.value = 1;
+    slider.min = 0;
+    slider.max = 1;
+    slider.step = 0.01;
+    slider.setAttribute('data-unit', '');
+  } else if(filter === 'grayscale' || filter === 'invert' || filter === 'sepia') {
+    slider.value = 0;
+    slider.min = 0;
+    slider.max = 1;
+    slider.step = 0.01;
+    slider.setAttribute('data-unit', '');
+  } else if(filter === 'hue-rotate') {
+    slider.value = 0;
+    slider.min = 0;
+    slider.max = 360;
+    slider.step = 1;
+    slider.setAttribute('data-unit', 'deg');
+  }
+}
+
+function setDiv(filter) {
+  if(filter === 'drop-shadow') {
+    divElem.style.filter = `${selectElem.value}(${Math.round(slider.value)}${slider.getAttribute('data-unit')} ${Math.round(slider.value)}${slider.getAttribute('data-unit')} ${Math.round(Math.abs(slider.value/2))}${slider.getAttribute('data-unit')})`;
+  } else {
+    divElem.style.filter = `${selectElem.value}(${slider.value}${slider.getAttribute('data-unit')}`;
+  }
+
+  updateOutput();
+  updateCurValue();
+}
+
+function updateOutput() {
+  output.textContent = slider.value;
+}
+
+function updateCurValue() {
+  curValue.textContent = `filter: ${divElem.style.filter}`;
+}
+
+setSlider(selectElem.value);
+setDiv(selectElem.value);
+
 
 
   
