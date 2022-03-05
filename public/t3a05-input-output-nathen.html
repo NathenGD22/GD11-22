@@ -48,11 +48,19 @@ function myCharCount(obj){
   
 <div id="charNum"></div>
  
-<input id="box1" type="text" /> + <input id="box2" type="text" /> = <input id="box3" type="text" /> <input type="button" value="Add" onclick="add()" />  
-  <script>
-  var box1 = document.getElementById("box1"); var box2 = document.getElementById("box2"); var box3 = document.getElementById("box3");
-    var result = Number(box1.value) + Number(box2.value); box3.innerHTML = result;
-  </script>
+<input type="text" id="box1"><br/>
+<input type="text" id="box2"><br/>
+<input type="text" id="+"><br/>
+<input type="button" value="+" onclick="calcSum()"><br/>
+
+<script>
+function calcSum(){
+let box1 = document.getElementById("box1").value;
+let box2 = document.getElementById("box2").value;
+let sum = Number(box1) + Number(box2);
+document.getElementById("+").value = sum;
+}
+</script>
   
   
   
