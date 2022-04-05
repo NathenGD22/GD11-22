@@ -20,24 +20,16 @@ try this:<br>
   
 <h4> Example working code</h4>
 
-Max loops: <input id="myNum01" type=number value="5" ><br>
+Loop this many times <input type="number" id="myText" value="7" size="10"> 
+    
+<input id="myButton125" type="button" value="For Loop" onclick="{                                                          
+document.getElementById('myDiv125').innerHTML = ''                                                            
+ for (myLoop = 0;  myLoop <= document.getElementById('myText').value;    myLoop++){                                                             
+ document.getElementById('myDiv1').innerHTML += 'Capy #'+ myLoop+'<br>' 
+                                                                }                                                              
+}"><br><br>
 
-<input type=button value="basic For loop with Decisions" onclick="{
-    document.GetElementById('myDiv01').innerhtml = ''
-    let myTemp = ''
-                                                                  
-    let myMax = parseInt(document.GetElementById9'myNum01').value)
-                                                              
-    for (let myLoop = 0; myLoop < myMax; myLoop++ ){
-                               
-       if (myLoop == 3){
-          myTemp += ' cool '
-      }
-                                                                  
-      myTemp += 'Loop number: ' +myLoop = '<br>'
-    }
-    document.GetElementById('myDiv01').innerhrml = myTemp
-}">
+<div id='myDiv1'>...</div><br>
   
   
 
