@@ -47,4 +47,39 @@ if (myHour < 18) {
           document.getElementById('myDiv01').innerHTML = myIn01 + ' is not complex'}
   }">
   
-  <div id="myDiv01">...</div>
+  <div id="myDiv01">...</div><br><br>
+  
+  <label for="weather">What kind of weather is it outside: </label>
+<select id="weather">
+  <option value="">--Select--</option>
+  <option value="sunny">Sunny</option>
+  <option value="rainy">Rainy</option>
+  <option value="snowing">Snowing</option>
+  <option value="overcast">Cloudy</option>
+</select>
+
+<p></p>
+  
+const select = document.querySelector('select');
+const para = document.querySelector('p');
+
+select.addEventListener('change', setWeather);
+
+function setWeather() {
+  const choice = select.value;
+
+  if (choice === 'sunny') {
+    para.textContent = 'It is nice and sunny outside today. Go to the beach, or the park, and get an ice cream.';
+  } else if (choice === 'rainy') {
+    para.textContent = 'Rain is falling outside; take a rain coat and an umbrella, and don\'t stay out for too long.';
+  } else if (choice === 'snowing') {
+    para.textContent = 'The snow is coming down. Best to stay in with a cup of hot chocolate, or go build a snowman.';
+  } else if (choice === 'overcast') {
+    para.textContent = 'It isn\'t raining, but the sky is grey and gloomy; it could turn any minute, so take a rain coat just in case.';
+  } else {
+    para.textContent = '';
+  }
+}
+  
+
+  
