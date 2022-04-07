@@ -26,16 +26,16 @@ let myPerson = {
 
 <h4> Example working Objects code</h4>
 
-Nothing: <input type=text id="myText01" value="Show Objectt"><br>
+Nothing: <input type=text id="myText01" value="Show Object"><br>
 
 
 <input type=button value="Example Object Set and Show" onClick="{
 
   let myPerson = {   
-    'firstName' : 'Gordon',
-    'lastName'  : 'Freeman',
-    'age'       :  27,
-    'eyeColor'  : 'Green'
+    'firstName' : 'John',
+    'lastName'  : 'Doe',
+    'age'       :  69,
+    'eyeColor'  : 'lightgoldenrodyellow'
   }
 
    document.getElementById('myDiv01').innerHTML = '<br>myPerson Object has properties: <br>'
@@ -49,6 +49,37 @@ Nothing: <input type=text id="myText01" value="Show Objectt"><br>
 
 
 <br>
+    <h4> Half-Life Protagonists </h4>
+    <input type=button value="Half Life" onClick="{
+      let myPersonG = {   
+    'firstName' : 'Gordon',
+    'lastName'  : 'Freeman',
+    'age'       :  27,
+    'eyeColor'  : 'Green'
+  }
+
+   document.getElementById('myDivG').innerHTML = '<br>Half-Life Protagonist has properties: <br>'
+   document.getElementById('myDivG').innerHTML += 'firstName: ' + myPersonG.firstName + '<br>'
+   document.getElementById('myDivG').innerHTML += 'lastName: ' + myPersonG.lastName + '<br>'
+   document.getElementById('myDivG').innerHTML += 'age: ' + myPersonG.age + '<br>' 
+   document.getElementById('myDivG').innerHTML += 'eyeColor: ' + myPersonG.eyeColor + '<br>'                                                              
+}">    
+    
+   <input type=button value="Half Life: Blue Shift" onClick="{
+      let myPersonB = {   
+    'firstName' : 'Barney',
+    'lastName'  : 'Calhoun',
+    'age'       :  Unknown,
+    'eyeColor'  : 'Brown'
+  }
+
+   document.getElementById('myDivG').innerHTML = '<br>Half-Life: Blue Shift Protagonist has properties: <br>'
+   document.getElementById('myDivG').innerHTML += 'firstName: ' + myPersonB.firstName + '<br>'
+   document.getElementById('myDivG').innerHTML += 'lastName: ' + myPersonB.lastName + '<br>'
+   document.getElementById('myDivG').innerHTML += 'age: ' + myPersonB.age + '<br>' 
+   document.getElementById('myDivG').innerHTML += 'eyeColor: ' + myPersonB.eyeColor + '<br>'                                                              
+}">                                              
+    
 
 
 
