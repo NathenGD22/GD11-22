@@ -69,7 +69,7 @@ Nothing: <input type=text id="myText01" value="Show Object"><br>
       let myPersonB = {   
     'firstName' : 'Barney',
     'lastName'  : 'Calhoun',
-    'age'       :  Unknown,
+    'age'       :  'Unknown',
     'eyeColor'  : 'Brown'
   }
 
@@ -78,8 +78,25 @@ Nothing: <input type=text id="myText01" value="Show Object"><br>
    document.getElementById('myDivG').innerHTML += 'lastName: ' + myPersonB.lastName + '<br>'
    document.getElementById('myDivG').innerHTML += 'age: ' + myPersonB.age + '<br>' 
    document.getElementById('myDivG').innerHTML += 'eyeColor: ' + myPersonB.eyeColor + '<br>'                                                              
-}">                                              
+}">         
     
+    <input type=button value="Half Life: Opposing Force" onClick="{
+      let myPersonA = {   
+    'firstName' : 'Adrian',
+    'lastName'  : 'Shephard',
+    'age'       :  22,
+    'eyeColor'  : 'Unknown'
+  }
+
+   document.getElementById('myDivG').innerHTML = '<br>Half-Life: Opposing Force Protagonist has properties: <br>'
+   document.getElementById('myDivG').innerHTML += 'firstName: ' + myPersonA.firstName + '<br>'
+   document.getElementById('myDivG').innerHTML += 'lastName: ' + myPersonA.lastName + '<br>'
+   document.getElementById('myDivG').innerHTML += 'age: ' + myPersonA.age + '<br>' 
+   document.getElementById('myDivG').innerHTML += 'eyeColor: ' + myPersonA.eyeColor + '<br>'                                                              
+}">                                              
+  
+    
+ <div id="myDivG">...</div>
 
 
 
