@@ -45,8 +45,8 @@ function myGrabNumber(){
 <div id="myDiv01">...</div>
      
 
-<h2>MPH to KPH Converter</h2>
-<p>Type a value in the MPH field to convert the value to KPH:</p>
+<h4>KPH to MPH Converter</h4>
+<p>Type in value to convert to miles per hour: </p>
 
 <p>
   <label>MPH</label>
@@ -59,6 +59,19 @@ function speedConverter(valNum) {
 }
 </script>
 
+<h4>Kilometers to Miles</h4>
+<p>Type in value to convert to miles:</p>
+
+<p>
+  <label>Kilometers</label>
+  <input id="inputKilometers" type="number" placeholder="Kilometers" oninput="LengthConverter(this.value)" onchange="LengthConverter(this.value)">
+</p>
+<p>Miles: <span id="outputMiles"></span></p>
+
+<script>
+function LengthConverter(valNum) {
+  document.getElementById("outputMiles").innerHTML=valNum*0.62137;
+}     
 
      
      
