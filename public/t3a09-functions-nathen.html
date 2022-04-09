@@ -1,1 +1,45 @@
+<script>
 
+function myExampleFunction(){
+   let myIn01 = parseInt(document.getElementById('myText01').value)
+   let mySum = myIn01 + myIn01
+   let myReply =  myIn01 + ' + ' + myIn01 + ' = ' + mySum
+   return myReply
+
+}
+
+</script>
+
+<html>
+<head>
+<style>
+  body { background-color: #8d4bb4; }
+</style>
+  </head>
+  <body>
+<h5> Version 0.0.6</h5>
+  <title> Functions </title>
+  <h1 align=center>T3A09 Functions by Nathen</h1>
+
+<a href="https://www.w3schools.com/js/js_functions.asp">Good reference to Javascript functions</a><br>
+
+Functions are used to sensibly organzie code. Then they are "Called" elsewhere. 
+Information can also be passed to functions (that's more advanced).
+
+<h4> Example Functions code</h4>
+<pre>
+function myGrabNumber(){
+   return parseInt(document.getElementById('myText01').value)
+}
+</pre>
+
+<h4> Example working code</h4>
+
+
+<input type=text id="myText01" value="3"><br>
+
+<input type=button value="Function Example" onClick="{
+   document.getElementById('myDiv01').innerHTML =  myExampleFunction()
+}">
+
+<div id="myDiv01">...</div>
