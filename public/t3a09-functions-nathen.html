@@ -49,15 +49,17 @@ function myGrabNumber(){
 <p>Type in value to convert to miles per hour: </p>
 
 <p>
-  <label>MPH</label>
-  <input id="inputMPH" type="number" placeholder="MPH" oninput="speedConverter(this.value)" onchange="speedConverter(this.value)">
+  <label>KPH</label>
+  <input id="inputKPH" type="number" placeholder="KPH" oninput="speedConverter(this.value)" onchange="speedConverter(this.value)">
 </p>
-<p>KPH: <span id="outputKPH"></span></p>
+<p>MPH: <span id="outputMPH"></span></p>
+
 <script>
 function speedConverter(valNum) {
-  document.getElementById("outputKPH").innerHTML=valNum*1.609344;
+  document.getElementById("outputMPH").innerHTML=valNum/1.609344;
 }
 </script><br><br>
+
 
 <h4>Kilometers to Miles</h4>
 <p>Type in value to convert to miles:</p>
