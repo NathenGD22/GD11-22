@@ -44,21 +44,21 @@ function myGrabNumber(){
 
 <div id="myDiv01">...</div>
      
-
-<h4>KPH to MPH Converter</h4>
-<p>Type in value to convert to miles per hour: </p>
+<h2>Temperature Converter</h2>
+<p>Type in value to convert to fahrenheit</p>
 
 <p>
-  <label>KPH</label>
-  <input id="inputKPH" type="number" placeholder="KPH" oninput="speedConverter(this.value)" onchange="speedConverter(this.value)">
+  <label>Fahrenheit</label>
+  <input id="inputFahrenheit" type="number" placeholder="Fahrenheit" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
 </p>
-<p>MPH: <span id="outputMPH"></span></p>
+<p>Celcius: <span id="outputCelcius"></span></p>
 
 <script>
-function speedConverter(valNum) {
-  document.getElementById("outputMPH").innerHTML=valNum/1.609344;
+function temperatureConverter(valNum) {
+  valNum = parseFloat(valNum);
+  document.getElementById("outputCelcius").innerHTML=(valNum-32)/1.8;
 }
-</script><br><br>
+</script>
 
 
 <h4>Kilometers to Miles</h4>
