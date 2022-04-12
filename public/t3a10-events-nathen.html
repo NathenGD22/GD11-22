@@ -39,7 +39,7 @@
 <br>
     
     <h3> onmouseover </h3>    
-<h5 onmouseover="style.color='pink'" onmouseout="style.color='black'">Hover over this text</h5><br><br>
+<h5 onmouseover="style.color='pink'" onmouseout="style.color='black'">Hover over this text</h5>
 
 <h3> onkeydown </h3>
 
@@ -50,5 +50,16 @@
 <script>
 function myFunction() {
   alert("You pressed a key inside the input field");
+}
+</script><br>
+
+<h3> Double clicking the box will fire the ondblclick event. </h3>
+<button ondblclick="myFunction()">Double-click me</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "You double clicked the box";
 }
 </script>
