@@ -1,1 +1,40 @@
+<html>
+<head>
+<style>
+  body { background-color: #8d4bb4; }
+</style>
+  </head>
+  <body>
+<h5> Version 0.0.6</h5>
+  <title> Spy </title>
+  <h1 align=center>T3A16 Spy by Nathen</h1>
+
+
+
+<textarea id="myArea01" rows=4 cols=70>Hello how are you</textarea><br> 
+
+
+<input type=button value="encrypt" onclick="{
+   let myTemp = ''
+   myString = document.getElementById('myArea01').value.toLowerCase().split('')
+   for (let myLoop=0;   myLoop < myString.length; myLoop++){
+      myTemp = myString[myLoop]
+      if (myString[myLoop] == 'e') {myTemp  = 'f'} 
+      if (myString[myLoop] == 'h') {myTemp  = 'i'} 
+      myString[myLoop] = myTemp
+   }
+   document.getElementById('myArea02').value = myString.join('')
+}"><br><br>
+
+
+
+<textarea id="myArea02" rows=4 cols=70></textarea><br> 
+
+<input type=button value="decrypt" onclick="{
+   alert('Sorry, you have to do this!')
+}"><br><br>
+
+
+<textarea id="myArea03" rows=4 cols=70></textarea><br> 
+
 
