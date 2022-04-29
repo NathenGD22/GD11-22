@@ -1,3 +1,17 @@
 <html>
 <head>
+		<link rel="stylesheet" type="text/css" href="interface.css" />
+</head>    
 <title> CapyClicker </title>
+<body>
+ body { background-color: #B802DB; }
+		<br />
+		Capy Coins: <span id="coins">0</span>
+		<br />
+		<button onclick="buyCapy()">Buy Capy</button>
+		<br />
+		Capys: <span id="capys">0</span>
+		<br />
+		Capy Cost: <span id="capyCost">10</span>
+		<script type="text/javascript" src="main.js"></script>
+
