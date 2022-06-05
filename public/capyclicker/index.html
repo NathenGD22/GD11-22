@@ -1,0 +1,194 @@
+<html>
+	<head>
+		<title>CapyCoinClicker</title>
+		
+		<style>	
+			
+			
+			.SectionLeft {
+				float: left;
+				width: 80%;
+			}
+			.sectionRight {
+				float: right;
+				width: 20%;
+				}
+				
+			.coinsContainer {
+				padding: 10px;
+				border-radius: 10px;
+				font-size: 36px;
+				font-weight: bold;
+				}
+				
+				.clickerContainer img {
+					position: relative;
+					transition: all .2s ease-in-out;
+				}
+				
+				.clickerContainer img:hover { transform: scale(1.10); }
+				.clickerContainer img:active { transform: scale(0.95); }
+				
+				.shopButton {
+					background-color: #b641fa;
+					transition: all .2s ease-in-ou;
+					border-radius: 5px;
+					width: 100%;
+					margin: 10px 0px 10px 0px;
+				}
+				
+				.shopButton:hover {
+					background-color: #ba52f7;
+					transition: all .2s ease-in-out;
+				}
+				
+				.shopButton #image {
+					width: 25%;
+				}
+				
+				.shopButton img {
+					height: 128px;
+					width: 128px;
+				}
+				
+				.shopButton #nameAndcost p {
+					margin: 0px;
+					width: 60%;
+				}
+				
+				.shopButton #nameAndcost p:first-of-type {
+					font-size: 24px;
+				}
+				
+
+				.shopButton #amount {
+					font-size: 48px;
+					color: black;
+					font-family: roboto;
+					width: 15%;
+				}
+		body {background-color: #940be3};	
+		</style>
+		</head>
+		
+	<body>
+		<div class="SectionLeft">
+			<center>
+		<div class="coinsContainer">
+		<span id="CapyCoins">0</span> CapyCoins<br>
+		<span id="CapyCoinSecond">0</span> CapyCoins per second
+		</div> 
+		<br>
+		<div class="clickerContainer"> 
+	<img src="image/CapyCoin.png" height="256px" width="256px" onclick="addToCapyCoins(clickPower)">
+	</div> </div> </div> 
+	
+		<div class="SectionRight">
+			<table class="shopButton" onclick="buyCapybara()">
+				<tr>
+				 <td id="image"><img src="image/Capybara.png"></td>
+				 <td id="nameAndcost">
+					<p>Capybara</p>
+					<p><span id="CapybaraCost">10</span> CapyCoins</p>
+					<p>1 CapyCoin/s</p>
+					</td>
+					<td id="amount"><span id="Capybaras">0</span></td>
+				</tr>
+				</table><table class="shopButton" onclick="buyCapyFarm()">
+				<tr>
+				 <td id="image"><img src="image/CapyFarm.png"></td>
+				 <td id="nameAndcost">
+					<p>CapyFarm</p>
+					<p><span id="CapyFarmCost">100</span> CapyCoins</p>
+					<p>5 CapyCoin/s</p>
+					</td>
+					<td id="amount"><span id="CapyFarms">0</span></td>
+				</tr>
+				</table>
+				</table><table class="shopButton" onclick="buyCapyFactory()">
+				<tr>
+				 <td id="image"><img src="image/CapyFactory.png"></td>
+				 <td id="nameAndcost">
+					<p>CapyFactory</p>
+					<p><span id="CapyFactoryCost">1000</span> CapyCoins</p>
+					<p>25 CapyCoin/s</p>
+					</td>
+					<td id="amount"><span id="CapyFactories">0</span></td>
+				</tr>
+				</table>
+			</div>
+	<script>
+		var CapyCoins = 0;
+		var clickPower = 1;
+		
+		var CapybaraCost = 10;
+		var Capybaras = 0;
+		var CapyFarmCost =100;
+		var CapyFarms= 0;
+		var CapyFactoryCost = 1000;
+		var CapyFactories = 0;
+		
+		
+		function buyCapybara() {
+			if (CapyCoins >= CapybaraCost) {
+				CapyCoins = CapyCoins - CapybaraCost;
+				Capybaras = Capybaras + 1;
+				CapybaraCost = Math.round(CapybaraCost * 1.15) ;
+				
+				
+				document.getElementById("CapyCoins").innerHTML = CapyCoins;
+				document.getElementById("CapybaraCost").innerHTML = CapybaraCost;
+				document.getElementById("Capybaras").innerHTML = Capybaras;
+				updateCapyCoinSecond() ;
+			}
+		}
+		
+		function buyCapyFarm() {
+			if (CapyCoins >= CapyFarmCost) {
+				CapyCoins = CapyCoins - CapyFarmCost;
+				CapyFarms = CapyFarms + 1;
+				CapyFarmCost = Math.round(CapyFarmCost * 1.15) ;
+				
+				
+				document.getElementById("CapyCoins").innerHTML = CapyCoins;
+				document.getElementById("CapyFarmCost").innerHTML = CapyFarmCost;
+				document.getElementById("CapyFarms").innerHTML = CapyFarms;
+				updateCapyCoinSecond() ;
+			}
+		}
+		
+		function buyCapyFactory() {
+			if (CapyCoins >= CapyFactoryCost) {
+				CapyCoins = CapyCoins - CapyFactoryCost;
+				CapyFactories = CapyFactories + 1;
+				CapyFactoryCost = Math.round(CapyFactoryCost * 1.15) ;
+				
+				
+				document.getElementById("CapyCoins").innerHTML = CapyCoins;
+				document.getElementById("CapyFactoryCost").innerHTML = CapyFactoryCost;
+				document.getElementById("CapyFactories").innerHTML = CapyFactories;
+				updateCapyCoinSecond() ;
+			}
+		}
+		
+		function addToCapyCoins(amount) {
+			CapyCoins = CapyCoins + amount;
+			document.getElementById("CapyCoins").innerHTML = CapyCoins;
+		}
+
+			function updateCapyCoinSecond() {
+				CapyCoinSecond = Capybaras + CapyFarms * 5 + CapyFactories * 25;
+				document.getElementById("CapyCoinSecond").innerHTML = CapyCoinSecond;
+			}
+		
+		setInterval (function() {
+			CapyCoins = CapyCoins + Capybaras;
+			CapyCoins = CapyCoins + CapyFarms * 5;
+			CapyCoins = CapyCoins + CapyFactories * 25;
+			document.getElementById("CapyCoins").innerHTML = CapyCoins;
+			
+			document.title = CapyCoins + " CapyCoins - CapyCoinClicker";
+		}, 1000) ;
+ 	</script>
+	</body>
+</html>
