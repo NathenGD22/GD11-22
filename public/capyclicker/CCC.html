@@ -83,7 +83,9 @@
 		<br>
 		<div class="clickerContainer"> 
 	<img src="image/CapyCoin.png" height="256px" width="256px" onclick="addToCapyCoins(clickPower)">
-	</div> </div> </div> 
+	</div> </div> </div>
+	<button onclick="saveGame() ;">Save Game</button>
+			
 	
 		<div class="SectionRight">
 			<table class="shopButton" onclick="buyCapybara()">
@@ -124,7 +126,7 @@
 				 <td id="nameAndcost">
 					<p>CapyCity</p>
 					<p><span id="CapyCityCost">10000</span> CapyCoins</p>
-					<p>250 CapyCoin/s</p>
+					<p>125 CapyCoin/s</p>
 					</td>
 					<td id="amount"><span id="CapyCities">0</span></td>
 				</tr>
@@ -134,17 +136,28 @@
 				 <td id="nameAndcost">
 					<p>CapyContinent</p>
 					<p><span id="CapyContinentCost">50000</span> CapyCoins</p>
-					<p>1000 CapyCoin/s</p>
+					<p>625 CapyCoin/s</p>
 					</td>
 					<td id="amount"><span id="CapyContinents">0</span></td>
 				</tr>
+				<table class="shopButton" onclick="buyCapyPlanet()">
+				<tr>
+				 <td id="image"><img src="image/CapyPlanet.png"></td>
+				 <td id="nameAndcost">
+					<p>CapyPlanet</p>
+					<p><span id="CapyPlanetCost">200000</span> CapyCoins</p>
+					<p>2200 CapyCoin/s</p>
+					</td>
+					<td id="amount"><span id="CapyPlanets">0</span></td>
+				</tr>
+				
 				
 			</div>
 	<script>
 		var CapyCoins = 0;
 		var clickPower = 1;
 		
-		var CapybaraCost = 10;
+		var CapybaraCost = 15;
 		var Capybaras = 0;
 		var CapyFarmCost =100;
 		var CapyFarms= 0;
@@ -154,6 +167,8 @@
 		var CapyCities = 0;
 		var CapyContinents = 0;
 		var CapyContinentCost = 50000;
+		var CapyPlanets = 0;
+		var CapyPlanetCost = 200000
 		
 		
 		function buyCapybara() {
@@ -174,7 +189,7 @@
 			if (CapyCoins >= CapyFarmCost) {
 				CapyCoins = CapyCoins - CapyFarmCost;
 				CapyFarms = CapyFarms + 1;
-				CapyFarmCost = Math.round(CapyFarmCost * 1.15) ;
+				CapyFarmCost = Math.round(CapyFarmCost * 1.12) ;
 				
 				
 				document.getElementById("CapyCoins").innerHTML = CapyCoins;
@@ -202,7 +217,7 @@
 			if (CapyCoins >= CapyCityCost) {
 				CapyCoins = CapyCoins - CapyCityCost;
 				CapyCities = CapyCities + 1;
-				CapyCityCost = Math.round(CapyCityCost * 1.05) ;
+				CapyCityCost = Math.round(CapyCityCost * 1.08) ;
 				
 				
 				document.getElementById("CapyCoins").innerHTML = CapyCoins;
@@ -216,12 +231,26 @@
 			if (CapyCoins >= CapyContinentCost) {
 				CapyCoins = CapyCoins - CapyContinentCost;
 				CapyContinents = CapyContinents + 1;
-				CapyContinentCost = Math.round(CapyContinentCost * 1.02) ;
+				CapyContinentCost = Math.round(CapyContinentCost * 1.05) ;
 				
 				
 				document.getElementById("CapyCoins").innerHTML = CapyCoins;
 				document.getElementById("CapyContinentCost").innerHTML = CapyContinentCost;
 				document.getElementById("CapyContinents").innerHTML = CapyContinents;
+				updateCapyCoinSecond() ;
+			}
+		}
+		
+		function buyCapyPlanet() {
+			if (CapyCoins >= CapyPlanetCost) {
+				CapyCoins = CapyCoins - CapyPlanetCost;
+				CapyPlanets = CapyPlanets + 1;
+				CapyPlanetCost = Math.round(CapyPlanetCost * 1.03) ;
+				
+				
+				document.getElementById("CapyCoins").innerHTML = CapyCoins;
+				document.getElementById("CapyPlanetCost").innerHTML = CapyPlanetCost;
+				document.getElementById("CapyPlanets").innerHTML = CapyPlanets;
 				updateCapyCoinSecond() ;
 			}
 		}
@@ -232,20 +261,48 @@
 		}
 
 			function updateCapyCoinSecond() {
-				CapyCoinSecond = Capybaras + CapyFarms * 5 + CapyFactories * 25 + CapyCities * 250 + CapyContinents * 1000;
+				CapyCoinSecond = Capybaras + CapyFarms * 5 + CapyFactories * 25 + CapyCities * 125 + CapyContinents * 625 + CapyPlanets * 2200;
 				document.getElementById("CapyCoinSecond").innerHTML = CapyCoinSecond;
 			}
+			
+	
 		
 		setInterval (function() {
 			CapyCoins = CapyCoins + Capybaras;
 			CapyCoins = CapyCoins + CapyFarms * 5;
 			CapyCoins = CapyCoins + CapyFactories * 25;
-			CapyCoins = CapyCoins + CapyCities * 250;
-			CapyCoins = CapyCoins + CapyContinents * 1000; 
+			CapyCoins = CapyCoins + CapyCities * 125;
+			CapyCoins = CapyCoins + CapyContinents * 625;
+			CapyCoins = CapyCoins + CapyPlanets * 2200;
 			document.getElementById("CapyCoins").innerHTML = CapyCoins;
 			
 			document.title = CapyCoins + " CapyCoins - CapyCoinClicker";
 		}, 1000) ;
+		
+		function saveGame () {
+                var gameSave = {
+                    CapyCoins: CapyCoins,
+                    clickPower: clickPower,
+                    CapybaraCost: CapybaraCost,
+                    Capybaras: Capybaras,
+                    CapyFarmCost: CapyFarmCost,
+                    CapyFarms: CapyFarms,
+                    CapyFactoryCost: CapyFactoryCost, 
+                    CapyFactories: CapyFactories,
+                    CapyCityCost: CapyCityCost,
+                    CapyCities: CapyCities,
+                    CapyContinents: CapyContinents,
+                    CapyContinentCost: CapyContinentCost, 
+                    CapyPlanets: CapyPlanets,
+                    CapyPlanetCost: CapyPlanetCost
+
+                } ;
+                localStorage.setItem("gameSave", JSON.stringify(gameSave));
+            }
+		
+		setInterval (function() {
+			saveGame();
+		}, 30000);
  	</script>
 	</body>
 </html>
