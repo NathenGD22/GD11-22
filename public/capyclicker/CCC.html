@@ -279,6 +279,24 @@
 			document.title = CapyCoins + " CapyCoins - CapyCoinClicker";
 		}, 1000) ;
 		
+		function loadGame () {
+			var savedGame = JSON.parse(localStorage.getItem("gameSave"));
+			if (typeof savedGame.CapyCoins !== "undefined") CapyCoins = savedGame.CapyCoins;
+			if (typeof savedGame.clickPower !== "undefined") clickPower = savedGame.clickPower;
+			if (typeof savedGame.CapybaraCost !== "undefined") CapybaraCost = savedGame.CapybaraCost;
+			if (typeof savedGame.Capybaras !== "undefined") Capybaras = savedGame.Capybaras;
+			if (typeof savedGame.CapyFarmCost !== "undefined") CapyFarmCost = savedGame.CapyFarmCost;
+			if (typeof savedGame.CapyFarms !== "undefined") CapyFarms = savedGame.CapyFarms;
+			if (typeof savedGame.CapyFactoryCost !== "undefined") CapyFactoryCost = savedGame.CapyFactoryCost;
+			if (typeof savedGame.CapyFactories !== "undefined") CapyFactories = savedGame.CapyFactories;
+			if (typeof savedGame.CapyCityCost !== "undefined") CapyCityCost = savedGame.CapyCityCost;
+			if (typeof savedGame.CapyCities !== "undefined") CapyCities = savedGame.CapyCities;
+			if (typeof savedGame.CapyContinents !== "undefined") CapyContinents = savedGame.CapyContinents;
+			if (typeof savedGame.CapyContinentCost !== "undefined") CapyContinentCost = savedGame.CapyContinentCost;
+			if (typeof savedGame.CapyPlanets !== "undefined") CapyPlanets = savedGame.CapyPlanets;
+			if (typeof savedGame.CapyPlanetCost !== "undefined") CapyPlanetCost = savedGame.CapyPlanetCost;
+				}
+			
 		function saveGame () {
                 var gameSave = {
                     CapyCoins: CapyCoins,
@@ -299,6 +317,10 @@
                 } ;
                 localStorage.setItem("gameSave", JSON.stringify(gameSave));
             }
+			
+			window.onload = function() {
+				loadgame();
+			};
 		
 		setInterval (function() {
 			saveGame();
