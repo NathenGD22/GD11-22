@@ -295,6 +295,7 @@
 			if (typeof savedGame.CapyContinentCost !== "undefined") CapyContinentCost = savedGame.CapyContinentCost;
 			if (typeof savedGame.CapyPlanets !== "undefined") CapyPlanets = savedGame.CapyPlanets;
 			if (typeof savedGame.CapyPlanetCost !== "undefined") CapyPlanetCost = savedGame.CapyPlanetCost;
+			if (typeof savedGame.CapyCoinSecond !== "undefined") CapyCoinSecond = savedGame.CapyCoinSecond;
 				}
 			
 		function saveGame () {
@@ -312,7 +313,8 @@
                     CapyContinents: CapyContinents,
                     CapyContinentCost: CapyContinentCost, 
                     CapyPlanets: CapyPlanets,
-                    CapyPlanetCost: CapyPlanetCost
+                    CapyPlanetCost: CapyPlanetCost,
+		    CapyCoinSecond: CapyCoinSecond
 
                 } ;
                 localStorage.setItem("gameSave", JSON.stringify(gameSave));
