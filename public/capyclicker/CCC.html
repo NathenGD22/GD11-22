@@ -4,14 +4,25 @@
 		
 		<style>	
 			
+			html, body {
+				margin: 0;
+				height: 100%;
+				overflow: hidden
+			}		
+			
 			
 			.SectionLeft {
 				float: left;
-				width: 80%;
+				width: 75%;
+				
 			}
 			.sectionRight {
 				float: right;
-				width: 20%;
+				width: 25%;
+				height: 100%;
+				overflow-y: auto;
+				
+				
 				}
 				
 			.coinsContainer {
@@ -31,7 +42,7 @@
 				
 				.shopButton {
 					background-color: #b641fa;
-					transition: all .2s ease-in-ou;
+					transition: all .2s ease-in-out;
 					border-radius: 5px;
 					width: 100%;
 					margin: 10px 0px 10px 0px;
@@ -69,6 +80,12 @@
 					font-family: roboto;
 					width: 15%;
 				}
+				
+				
+				.Buttons {
+					padding-top: 5px;
+					
+				}
 		body {background-color: #940be3};	
 		</style>
 		</head>
@@ -84,9 +101,9 @@
 		<div class="clickerContainer"> 
 	<img src="image/CapyCoin.png" height="256px" width="256px" onclick="addToCapyCoins(clickPower)">
 	</div> </div> </div>
-	<button onclick="saveGame() ;" title="Game autosaves every 30 seconds" >Manual Save</button>
-	<button onclick="resetGame() ;">Reset Game</button>
-			
+			<div class="Buttons">
+		<button onclick="saveGame() ;"  title="Game autosaves every 30 seconds" >Manual Save</button>
+		<button onclick="resetGame();" style="background-color:#b51414;" >Reset Game</button> </div>	
 	
 		<div class="SectionRight">
 			<table class="shopButton" onclick="buyCapybara()">
@@ -94,7 +111,7 @@
 				 <td id="image"><img src="image/Capybara.png"></td>
 				 <td id="nameAndcost">
 					<p>Capybara</p>
-					<p><span id="CapybaraCost">15</span> CapyCoins</p>
+					<p><span id="CapybaraCost">10</span> CapyCoins</p>
 					<p>1 CapyCoin/s</p>
 					</td>
 					<td id="amount"><span id="Capybaras">0</span></td>
@@ -103,7 +120,7 @@
 				<tr>
 				 <td id="image"><img src="image/CapyFarm.png"></td>
 				 <td id="nameAndcost">
-					<p>CapyFarm</p>
+					<p>Capy Farm</p>
 					<p><span id="CapyFarmCost">100</span> CapyCoins</p>
 					<p>5 CapyCoin/s</p>
 					</td>
@@ -114,8 +131,8 @@
 				<tr>
 				 <td id="image"><img src="image/CapyFactory.png"></td>
 				 <td id="nameAndcost">
-					<p>CapyFactory</p>
-					<p><span id="CapyFactoryCost">1000</span> CapyCoins</p>
+					<p>Capy Factory</p>
+					<p><span id="CapyFactoryCost">1200</span> CapyCoins</p>
 					<p>25 CapyCoin/s</p>
 					</td>
 					<td id="amount"><span id="CapyFactories">0</span></td>
@@ -125,7 +142,7 @@
 				<tr>
 				 <td id="image"><img src="image/CapyCity.png"></td>
 				 <td id="nameAndcost">
-					<p>CapyCity</p>
+					<p>Capy City</p>
 					<p><span id="CapyCityCost">10000</span> CapyCoins</p>
 					<p>125 CapyCoin/s</p>
 					</td>
@@ -135,7 +152,7 @@
 				<tr>
 				 <td id="image"><img src="image/CapyContinent.png"></td>
 				 <td id="nameAndcost">
-					<p>CapyContinent</p>
+					<p>Capy Continent</p>
 					<p><span id="CapyContinentCost">50000</span> CapyCoins</p>
 					<p>625 CapyCoin/s</p>
 					</td>
@@ -145,7 +162,7 @@
 				<tr>
 				 <td id="image"><img src="image/CapyPlanet.png"></td>
 				 <td id="nameAndcost">
-					<p>CapyPlanet</p>
+					<p>Capy Planet</p>
 					<p><span id="CapyPlanetCost">200000</span> CapyCoins</p>
 					<p>2200 CapyCoin/s</p>
 					</td>
@@ -153,16 +170,20 @@
 				</tr>
 				
 				
+				
+				
+				
+				
 			</div>
 	<script>
 		var CapyCoins = 0;
 		var clickPower = 1;
 		
-		var CapybaraCost = 15;
+		var CapybaraCost = 10;
 		var Capybaras = 0;
 		var CapyFarmCost =100;
 		var CapyFarms= 0;
-		var CapyFactoryCost = 1000;
+		var CapyFactoryCost = 1200;
 		var CapyFactories = 0;
 		var CapyCityCost = 10000;
 		var CapyCities = 0;
@@ -176,7 +197,7 @@
 			if (CapyCoins >= CapybaraCost) {
 				CapyCoins = CapyCoins - CapybaraCost;
 				Capybaras = Capybaras + 1;
-				CapybaraCost = Math.round(CapybaraCost * 1.15) ;
+				CapybaraCost = Math.round(10 * 1.15 ** Capybaras) ;
 				
 				
 				document.getElementById("CapyCoins").innerHTML = CapyCoins;
@@ -190,7 +211,7 @@
 			if (CapyCoins >= CapyFarmCost) {
 				CapyCoins = CapyCoins - CapyFarmCost;
 				CapyFarms = CapyFarms + 1;
-				CapyFarmCost = Math.round(CapyFarmCost * 1.12) ;
+				CapyFarmCost = Math.round(100 * 1.145 ** CapyFarms) ;
 				
 				
 				document.getElementById("CapyCoins").innerHTML = CapyCoins;
@@ -204,7 +225,7 @@
 			if (CapyCoins >= CapyFactoryCost) {
 				CapyCoins = CapyCoins - CapyFactoryCost;
 				CapyFactories = CapyFactories + 1;
-				CapyFactoryCost = Math.round(CapyFactoryCost * 1.1) ;
+				CapyFactoryCost = Math.round(1200 * 1.14 ** CapyFactories) ;
 				
 				
 				document.getElementById("CapyCoins").innerHTML = CapyCoins;
@@ -218,7 +239,7 @@
 			if (CapyCoins >= CapyCityCost) {
 				CapyCoins = CapyCoins - CapyCityCost;
 				CapyCities = CapyCities + 1;
-				CapyCityCost = Math.round(CapyCityCost * 1.08) ;
+				CapyCityCost = Math.round(10000 * 1.135 ** CapyCities) ;
 				
 				
 				document.getElementById("CapyCoins").innerHTML = CapyCoins;
@@ -232,7 +253,7 @@
 			if (CapyCoins >= CapyContinentCost) {
 				CapyCoins = CapyCoins - CapyContinentCost;
 				CapyContinents = CapyContinents + 1;
-				CapyContinentCost = Math.round(CapyContinentCost * 1.05) ;
+				CapyContinentCost = Math.round(50000 * 1.13 ** CapyContinents) ;
 				
 				
 				document.getElementById("CapyCoins").innerHTML = CapyCoins;
@@ -246,7 +267,7 @@
 			if (CapyCoins >= CapyPlanetCost) {
 				CapyCoins = CapyCoins - CapyPlanetCost;
 				CapyPlanets = CapyPlanets + 1;
-				CapyPlanetCost = Math.round(CapyPlanetCost * 1.03) ;
+				CapyPlanetCost = Math.round(200000 * 1.125 ** CapyPlanets) ;
 				
 				
 				document.getElementById("CapyCoins").innerHTML = CapyCoins;
