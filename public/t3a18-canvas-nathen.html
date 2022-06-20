@@ -36,16 +36,7 @@
    //myContext.rotate(-60 * Math.PI / 180); 
 }">
     
-<input type=button value="epic" onclick="{
-   myContext.font = '7px Papyrus';
-   myContext.fillText('ThinkShutter is the branding of a webcam privacy shutter present in some ThinkPad notebook computers. It is a simple mechanical sliding cover that allows the user to obstruct the webcam's view.[40] Some add-on webcams and other laptop brands provide a similar feature. IdeaPad notebooks carry the TrueBlock branding for their privacy shutters.[41] ', 400, 100);
-   myContext.translate(420, 169);  
-   myContext.rotate(60 * Math.PI / 180); 
-   myContext.fillText('ThinkShutter is the branding of a webcam privacy shutter present in some ThinkPad notebook computers. It is a simple mechanical sliding cover that allows the user to obstruct the webcam's view.[40] Some add-on webcams and other laptop brands provide a similar feature. IdeaPad notebooks carry the TrueBlock branding for their privacy shutters.[41] ', 10, 10);
-   myContext.stroke();
-   myContext.resetTransform();  
-   //myContext.rotate(-60 * Math.PI / 180); 
-}">    
+
 
 <input type=button value=".quadraticCurveTo(100,220,240,110)" onclick="{
    myContext.beginPath();
@@ -72,7 +63,20 @@
 
 <input type=button value="clearRect(20, 20, 50, 50)" onclick="{
    myContext.clearRect(20, 20, 50, 50);
+                                                             
 }">
+    
+<input type=button value="epic" onclick="{
+   myContext.font = '7px Papyrus';
+   myContext.fillText('ThinkShutter is the branding of a webcam privacy shutter present in some ThinkPad notebook computers. It is a simple mechanical sliding cover that allows the user to obstruct the webcams view', 400, 100);
+   myContext.translate(420, 169);  
+   myContext.rotate(60 * Math.PI / 180); 
+   myContext.fillText('ThinkShutter is the branding of a webcam privacy shutter present in some ThinkPad notebook computers. It is a simple mechanical sliding cover that allows the user to obstruct the webcams view. ', 10, 10);
+   myContext.stroke();
+   myContext.resetTransform();  
+   //myContext.rotate(-60 * Math.PI / 180); 
+}">        
+    
 
 <input type=button value="Clear all" onclick="{
    myContext.clearRect(0, 0, myCanvas.width, myCanvas.height);
