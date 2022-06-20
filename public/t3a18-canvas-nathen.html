@@ -67,7 +67,7 @@
 }">
     
 <input type=button value="epic" onclick="{
-   myContext.font = '7px Papyrus';
+   myContext.font = '12px Papyrus';
    myContext.fillText('ThinkShutter is the branding of a webcam privacy shutter present in some ThinkPad notebook computers. It is a simple mechanical sliding cover that allows the user to obstruct the webcams view', 400, 100);
    myContext.translate(75, 250);  
    myContext.rotate(35 * Math.PI / 200); 
@@ -75,7 +75,21 @@
    myContext.stroke();
    myContext.resetTransform();  
    //myContext.rotate(-35 * Math.PI / 200); 
-}">        
+}">  
+    
+<input type=button value="gradient 2" onclick="{
+   let myGradient = myContext.createLinearGradient(10, 30, 20, 40);
+   myGradient.addColorStop(0, 'pink');
+   myGradient.addColorStop(2, 'purple');
+   myGradient.addColorStop(1, 'pink');
+
+   myContext.fillStyle = myGradient;
+   myContext.fillRect(10, 30, 20, 40);
+
+   // reset fillstyle
+   myContext.fillStyle = 'white';
+}"><br><br>
+    
     
 
 <input type=button value="Clear all" onclick="{
